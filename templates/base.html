@@ -47,16 +47,21 @@
                             {% endif %}
                             <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
                             <p class="tagline">{{ TAGLINE }}</p>
-                            {% for title, link in MENUITEMS %}
-                                <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
-                            {% endfor %}
-                                <p class="social">
-                            {% for title, link in SOCIAL %}
-                                    <a href="{{ link }}">
-                                        <i class="fa fa-{{ title }} fa-3x"></i>
-                                    </a>
-                            {% endfor %}
+
+                            <div class="pages-menu">
+                                <p>
+                                    <span class="links"> <a href="{{ SITEURL }}">Home</a></span>
+                                    {% for title, link in MENUITEMS %}
+                                        <span class="seperator">&#x2022; </span> <span class="links"> <a href="{{ link }}">{{ title }}</a> </span>
+                                    {% endfor %}
+                                        <p class="social">
+                                    {% for title, link in SOCIAL %}
+                                            <a href="{{ link }}">
+                                                <i class="fa fa-{{ title }} fa-3x"></i>
+                                            </a>
+                                    {% endfor %}
                                 </p>
+                            </div>
                         </hgroup>
                     </header>
                 </div>
